@@ -14,14 +14,14 @@ var hora = app.instanteAtual.getHours();
 var minuto = app.instanteAtual.getMinutes();
 var segundo = app.instanteAtual.getSeconds();
 
-function initialize() {
-	app.grausSeg = (segundo-1)*6;
-	app.grausMin = (minuto)*6;
-	app.grausHr = (hora > 12) ? (hora-13)*36 : ((hora -1)*36);
+
+function setarHorario() {
+	app.grausSeg = segundo*6;
+	app.grausMin = minuto*6;
+	app.grausHr = (hora > 12) ? ((hora-12)*30) : (hora*30);
 	app.ponteiroSeg.setAttribute("transform", "rotate("+app.grausSeg+" 150,150)");
 	app.ponteiroMin.setAttribute("transform", "rotate("+app.grausMin+" 150,150)");
 	app.ponteiroHr.setAttribute("transform", "rotate("+app.grausHr+" 150,150)");
-	atualizaRelogio();
 }
 
 function atualizaInstanteAtual() {
@@ -32,7 +32,7 @@ function atualizaInstanteAtual() {
 }
 
 
-function atualizaRelogio() {
+function main() {
 
 	atualizaInstanteAtual();
 
@@ -48,28 +48,13 @@ function atualizaRelogio() {
     if (strHora.length == 1)
        hora = "0" + hora;
 
-    horaFormatada = hora + " : " + minuto + " : " + segundo;
+    horaFormatada = hora + ":" + minuto + ":" + segundo;
 
     app.relogioDigital.value = horaFormatada;
 	
-	app.grausSeg += 6;
+    setarHorario();
 
-	app.ponteiroSeg.setAttribute("transform", "rotate("+app.grausSeg+" 150,150)");		
-
-	if (app.grausSeg == 360) {
-		app.grausSeg = 0;
-		app.grausMin += 6;
-		app.ponteiroMin.setAttribute("transform", "rotate("+app.grausMin+" 150,150)");
-	}
-
-	if (app.grausMin == 360) {
-		app.grausMin = 0;
-		app.grausHr += 6;
-		app.ponteiroHr.setAttribute("transform", "rotate("+app.grausHr+" 150,150)");
-	}
-
-
-    setTimeout("atualizaRelogio()",1000);
+    setTimeout("main()",1000);
 }
 
-initialize();
+main();
