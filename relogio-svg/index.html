@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Relógio</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<div class="vh100 center">
+
+		<svg height="300" width="300">
+
+			<!-- Corpo do relógio -->
+			<circle id="corpo-relogio" cx="150" cy="150" r="140" />
+
+			<!-- Ponteiro das horas -->
+			<line id="ponteiro-horas" x1="150" y1="60" x2="150" y2="150" />
+			
+			<!-- Ponteiro dos minutos -->
+			<line id="ponteiro-minutos" x1="150" y1="35" x2="150" y2="150" />
+			
+			<!-- Ponteiro dos segundos -->
+			<line id="ponteiro-segundos" x1="150" y1="25" x2="150" y2="150" />
+
+			<!-- Marcador III -->
+			<line class="marcador" x1="290" y1="150" x2="280" y2="150" />
+
+			<!-- Marcador VI -->
+			<line class="marcador" x1="150" y1="290" x2="150" y2="280" />
+
+			<!-- Marcador IX -->
+			<line class="marcador" x1="10" y1="150" x2="20" y2="150" />
+
+			<!-- Marcador XII -->
+			<line class="marcador" x1="150" y1="10" x2="150" y2="20" />
+			
+			<!-- Centro do relógio -->
+			<circle id="centro-relogio" cx="150" cy="150" r="2" />
+
+			Desculpe, o seu navegador não suporta SVG inline.
+		</svg>
+
+		<input id="relogio-digital" type="text" name="relogio">
+
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,53 @@
+body {
+	margin: 0;
+}
+
+.vh100 {
+    min-height: 100vh; 
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#corpo-relogio {
+	stroke-width: 5;
+	stroke: #95a5a6;
+	fill: #34495e;
+}
+
+#centro-relogio {
+	stroke-width: 2;
+	stroke: #bdc3c7;
+	fill: #bdc3c7;
+}
+
+#ponteiro-horas {
+	stroke: #bdc3c7;
+	stroke-width: 4;
+}
+
+#ponteiro-minutos {
+	stroke: #bdc3c7;
+	stroke-width: 2;	
+}
+
+#ponteiro-segundos {
+	stroke: #c0392b;
+	stroke-width: 1;
+}
+
+.marcador {
+	stroke: #95a5a6;
+	stroke-width: 5;
+}
+
+#relogio-digital {
+	text-align: center;
+	border: none;
+	font-size: 1.4em;
+}
